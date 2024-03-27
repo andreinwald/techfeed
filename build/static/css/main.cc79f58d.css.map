@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.cc79f58d.css","mappings":"AAAA,KACI,4BACJ,CAEA,SAEI,aAAc,CADd,gBAEJ","sources":["styles.css"],"sourcesContent":["body {\n    font-family: Arial, sans-serif;\n}\n\n.wrapper {\n    max-width: 1000px;\n    margin: 0 auto;\n}\n"],"names":[],"sourceRoot":""}
