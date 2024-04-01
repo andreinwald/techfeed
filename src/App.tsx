@@ -23,6 +23,7 @@ export const App = () => {
             <br/><br/>
             <div style={{fontSize: '13px'}}>comments:</div>
             {story.comments && story.comments.map(comment => (
+                comment.text &&
                 <div dangerouslySetInnerHTML={{__html: comment.text.substring(0, 1000)}}></div>
             ))}
             <br/>
