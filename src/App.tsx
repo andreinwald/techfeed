@@ -17,6 +17,14 @@ export const App = () => {
             {story.url &&
                 <a href={story.url}>link</a>
             }
+            {story.openGraph && (<>
+                    <br/><br/>
+                    <div>{story.openGraph.description}</div>
+                    <img style={{width: '300px', display: 'block'}} src={story.openGraph.image}/>
+                    <div>{story.openGraph.title}</div>
+                    <br/>
+                </>
+            )}
             {story.text &&
                 <div dangerouslySetInnerHTML={{__html: story.text.substring(0, 1000)}}></div>
             }
