@@ -29,13 +29,16 @@ export default class DateReceiver {
                     comments.push(story['kids'][0]);
                     story.comments = await Promise.all(comments.map(commentId => request(`https://hacker-news.firebaseio.com/v0/item/${commentId}.json`, {cache: 'force-cache'})));
                 }
-                if (story.url) {
-                    story.openGraph = await request('https://api.linkpreview.net/?q=' + story.url, {
-                        cache: 'force-cache',
-                        headers: {
-                            'X-Linkpreview-Api-Key': '8a3e9e0325b30e47eb1ff057cbec6f7c',
-                        }
-                    });
+                try {
+                    if (story.url) {
+                        story.openGraph = await request('https://api.linkpreview.net/?q=' + story.url, {
+                            cache: 'force-cache',
+                            headers: {
+                                'X-Linkpreview-Api-Key': '8a3e9e0325b30e47eb1ff057cbec6f7c',
+                            }
+                        });
+                    }
+                } catch (error) {
                 }
                 return story;
             }
